@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
-import style from './Header.module.scss';
-import styleMenu from './Menu/Menu.module.scss';
-import Menu from './Menu/Menu';
-import logo from '../image/logo.svg';
-import '../index.scss';
+import React, { useState } from 'react'
+import style from './Header.module.scss'
+import styleMenu from './Menu/Menu.module.scss'
+import Menu from './Menu/Menu'
+import logo from '../image/logo.svg'
+import '../index.scss'
+import {useDispatch} from "react-redux";
+import {loginOut} from "../redux/loginPageReducer";
 
 const Header = () => {
-  const [isHidden, setIsHidden] = useState(false);
-  const menuBurgerClassActive = isHidden ? style.menuBurgerActive : style.menuBurger;
-  const menuActive = isHidden ? styleMenu.menuActive : styleMenu.menu;
+  const [isHidden, setIsHidden] = useState(false)
+  const menuBurgerClassActive = isHidden ? style.menuBurgerActive : style.menuBurger
+  const menuActive = isHidden ? styleMenu.menuActive : styleMenu.menu
   const toggleBurgerMenu = () => {
-    setIsHidden(!isHidden);
-  };
+    setIsHidden(!isHidden)
+  }
   if (isHidden) {
-    document.querySelector('body').classList.add('lock');
+    document.querySelector('body').classList.add('lock')
   } else {
-    document.querySelector('body').classList.remove('lock');
+    document.querySelector('body').classList.remove('lock')
+  }
+  const dispatch = useDispatch()
+  const onLogOut = () => {
+    dispatch(loginOut())
   }
   return (
     <header>
@@ -31,9 +37,12 @@ const Header = () => {
           </div>
           <Menu menu={menuActive} />
         </div>
+        <div>
+          <button onClick={onLogOut}>Log out</button>
+        </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

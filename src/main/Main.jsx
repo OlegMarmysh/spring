@@ -1,6 +1,6 @@
-import React from 'react';
-import style from './Main.module.scss';
-import pacman from '../image/pacman.svg';
+import React from 'react'
+import style from './Main.module.scss'
+import pacman from '../image/pacman.svg'
 
 const Main = () => (
   <main>
@@ -20,4 +20,4 @@ const Main = () => (
   </main>
 );
 
-export default Main;
+export default Main
