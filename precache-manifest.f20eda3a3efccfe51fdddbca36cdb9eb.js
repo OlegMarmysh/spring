@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d928d2c71f247da5803e2fabdacfd62",
+    "revision": "e794f50827ac63e9f94695b21ba2b0ef",
     "url": "/spring/index.html"
   },
   {
-    "revision": "714041e7b748f5a55c95",
-    "url": "/spring/static/css/main.2cc0d225.chunk.css"
+    "revision": "2312bf374c8b8c19826d",
+    "url": "/spring/static/css/main.e2c5f934.chunk.css"
   },
   {
-    "revision": "930fcbd503444ae71a0e",
-    "url": "/spring/static/js/2.3a4fb771.chunk.js"
+    "revision": "59122d20bad737a8a198",
+    "url": "/spring/static/js/2.dda9a88a.chunk.js"
   },
   {
-    "revision": "5356fa2f66e46e6c05e4cbe319ac7f1d",
-    "url": "/spring/static/js/2.3a4fb771.chunk.js.LICENSE.txt"
+    "revision": "115c29c453b61995b5be0af8c45bd83e",
+    "url": "/spring/static/js/2.dda9a88a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "714041e7b748f5a55c95",
-    "url": "/spring/static/js/main.b3eb8ccb.chunk.js"
+    "revision": "2312bf374c8b8c19826d",
+    "url": "/spring/static/js/main.aa0b73b9.chunk.js"
   },
   {
     "revision": "f88d324f7f8af64d53f7",
