@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './FooterLeft.module.scss';
+import React from 'react'
+import style from './FooterLeft.module.scss'
 
 const FooterLeft = () => (
   <div className={style.springFooterLeft}>
@@ -38,6 +38,6 @@ const FooterLeft = () => (
       <p><a href="#">Thank you</a></p>
     </div>
   </div>
-);
+)
 
-export default FooterLeft;
+export default FooterLeft

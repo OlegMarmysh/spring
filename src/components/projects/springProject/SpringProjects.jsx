@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './SpringProject.module.scss';
+import React from 'react'
+import style from './SpringProject.module.scss'
 
 const SpringProject = (props) => (
   <div className={style.springProject}>
@@ -11,6 +11,6 @@ const SpringProject = (props) => (
       <p>{props.body}</p>
     </div>
   </div>
-);
+)
 
-export default SpringProject;
+export default SpringProject

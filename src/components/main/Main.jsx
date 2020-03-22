@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Main.module.scss'
-import pacman from '../image/pacman.svg'
+import pacman from '../../image/pacman.svg'
 
 const Main = () => (
   <main>

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import style from './Header.module.scss'
-import styleMenu from './Menu/Menu.module.scss'
-import Menu from './Menu/Menu'
-import logo from '../image/logo.svg'
-import '../index.scss'
-import {useDispatch} from "react-redux";
-import {loginOut} from "../redux/loginPageReducer";
+import styleMenu from './menu/Menu.module.scss'
+import Menu from './menu/Menu'
+import logo from '../../image/logo.svg'
+import '../../index.scss'
+import { useDispatch } from 'react-redux'
+import { loginOut } from '../redux/loginPageReducer'
 
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false)

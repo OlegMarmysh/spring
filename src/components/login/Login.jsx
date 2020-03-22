@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import style from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { signIn } from '../redux/loginPageReducer'
+import {signIn} from "../redux/loginPageReducer";
 
 const Login = () => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
-  const { isAuth } = useSelector(state => ({ isAuth: state.loginPage.isAuth }))
-  const { status } = useSelector(state => ({ status: state.loginPage.status }))
+  const isAuth = useSelector(state => state.loginPage.isAuth)
+  const errorMessage = useSelector(state => state.loginPage.errorMessage)
 
   if (isAuth) {
     return <Redirect to={'/spring'}/>
@@ -21,7 +21,7 @@ const Login = () => {
   const onPasswordChange = (e) => {
     setPassword(e.currentTarget.value)
   }
-  const onSignIn = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault()
     dispatch(signIn(login, password))
   }
@@ -32,10 +32,10 @@ const Login = () => {
         <input type="text" placeholder="login" value={login} onChange={onLoginChange}/>
         <input type="password" placeholder="password" value={password} onChange={onPasswordChange}/>
         <div>
-          <span>{status}</span>
+          <span>{errorMessage}</span>
         </div>
         <div>
-          <button className={style.loginBtn} onClick={onSignIn}>Sign in</button>
+          <button className={style.loginBtn} onClick={onSubmit}>Sign in</button>
         </div>
       </form>
     </div>

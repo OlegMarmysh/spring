@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './FooterRight.module.scss';
+import React from 'react'
+import style from './FooterRight.module.scss'
 
 const FooterRight = () => (
   <div className={style.springFooterRight}>
@@ -18,6 +18,6 @@ const FooterRight = () => (
       </div>
     </form>
   </div>
-);
+)
 
-export default FooterRight;
+export default FooterRight

@@ -62,6 +62,6 @@ const Menu = (props) => (
       </li>
     </ul>
   </div>
-);
+)
 
-export default Menu;
+export default Menu

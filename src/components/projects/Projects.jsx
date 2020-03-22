@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import style from './Projects.module.scss'
-import SpringProject from './SpringProject/SpringProjects'
-import springBoot from '../image/spring-boot.svg'
-import springFramework from '../image/spring-framework.svg'
-import springData from '../image/spring-data.svg'
-import springCloud from '../image/spring-cloud.svg'
-import springPlatfrom from '../image/logo-io-platform.png'
-import springEd from '../image/spring-ed.svg'
+import SpringProject from './springProject/SpringProjects'
+import springBoot from '../../image/spring-boot.svg'
+import springFramework from '../../image/spring-framework.svg'
+import springData from '../../image/spring-data.svg'
+import springCloud from '../../image/spring-cloud.svg'
+import springPlatfrom from '../../image/logo-io-platform.png'
+import springEd from '../../image/spring-ed.svg'
 
 const Projects = () => {
   const state = {

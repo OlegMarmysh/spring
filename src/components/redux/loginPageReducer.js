@@ -1,11 +1,10 @@
-const SET_USER_DATA = 'spring/loginPage/SET_USER_DATA'
-const SET_SOME_STATUS = 'spring/loginPage/SET_SOME_STATUS'
+import { SET_SOME_STATUS, SET_USER_DATA, setErrorMessage, setUserData } from './loginAction'
 
 const initialState = {
   isAuth: false,
   login: null,
   password: null,
-  status: ''
+  errorMessage: ''
 }
 
 const loginPageReducer = (state = initialState, action) => {
@@ -22,22 +21,12 @@ const loginPageReducer = (state = initialState, action) => {
   }
 }
 
-export const setUserData = (login, password, isAuth) => ({
-  type: SET_USER_DATA,
-  payload: { login, password, isAuth }
-})
-
-export const setSomeStatus = (status) => ({
-  type: SET_SOME_STATUS,
-  payload: { status }
-})
-
 export const signIn = (login, password) => dispatch => {
   if (login === 'admin' && password === '1234') {
     dispatch(setUserData(login, password, true))
-    dispatch(setSomeStatus(''))
+    dispatch(setErrorMessage(''))
   } else {
-    dispatch(setSomeStatus('invalid email or password'))
+    dispatch(setErrorMessage('invalid email or password'))
   }
 }
 
