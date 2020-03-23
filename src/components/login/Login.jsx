@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import style from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import {signIn} from "../redux/loginPageReducer";
+import { signIn } from '../../redux/loginPageReducer'
 
 const Login = () => {
   const [login, setLogin] = useState('')
@@ -12,7 +12,7 @@ const Login = () => {
   const errorMessage = useSelector(state => state.loginPage.errorMessage)
 
   if (isAuth) {
-    return <Redirect to={'/spring'}/>
+    return <Redirect to='/spring'/>
   }
   const onLoginChange = (e) => {
     setLogin(e.currentTarget.value)

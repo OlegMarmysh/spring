@@ -5,10 +5,11 @@ import Menu from './menu/Menu'
 import logo from '../../image/logo.svg'
 import '../../index.scss'
 import { useDispatch } from 'react-redux'
-import { loginOut } from '../redux/loginPageReducer'
+import { logOut } from '../../redux/loginPageReducer'
 
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false)
+  const dispatch = useDispatch()
   const menuBurgerClassActive = isHidden ? style.menuBurgerActive : style.menuBurger
   const menuActive = isHidden ? styleMenu.menuActive : styleMenu.menu
   const toggleBurgerMenu = () => {
@@ -19,9 +20,8 @@ const Header = () => {
   } else {
     document.querySelector('body').classList.remove('lock')
   }
-  const dispatch = useDispatch()
   const onLogOut = () => {
-    dispatch(loginOut())
+    dispatch(logOut())
   }
   return (
     <header>

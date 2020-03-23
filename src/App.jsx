@@ -10,7 +10,7 @@ import Login from './components/login/Login'
 const App = () => {
   const isAuth = useSelector(state => state.loginPage.isAuth)
   if (!isAuth) {
-    return <Redirect to={'/login'}/>
+    return <Redirect to='/login'/>
   }
   return (
     <>
@@ -25,9 +25,9 @@ const App = () => {
 const SpringApp = () => {
   return (
     <HashRouter>
-      <Route exact path='/' render={() => <Redirect to={'/spring'}/>} />
-      <Route path="/spring" render = {() => <App/>} />
-      <Route path="/login" render = {() => <Login/>} />
+      <Redirect exact from='/' to='/spring' />
+      <Route path='/spring' component={App} />
+      <Route path='/login' component={Login} />
     </HashRouter>
   )
 }

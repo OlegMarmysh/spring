@@ -30,7 +30,7 @@ export const signIn = (login, password) => dispatch => {
   }
 }
 
-export const loginOut = () => dispatch => {
+export const logOut = () => dispatch => {
   dispatch(setUserData(null, null, false))
 }
 
