@@ -1,4 +1,5 @@
 import { SET_SOME_STATUS, SET_USER_DATA, setErrorMessage, setUserData } from './loginAction'
+import { authAPI } from '../api/api'
 
 const initialState = {
   isAuth: false,
@@ -21,12 +22,13 @@ const loginPageReducer = (state = initialState, action) => {
   }
 }
 
-export const signIn = (login, password) => dispatch => {
-  if (login === 'admin' && password === '1234') {
+export const signIn = (login, password) => async dispatch => {
+  const response = await authAPI.login(login, password)
+  if (response.data.resultCode === 0) {
     dispatch(setUserData(login, password, true))
     dispatch(setErrorMessage(''))
   } else {
-    dispatch(setErrorMessage('invalid email or password'))
+    dispatch(setErrorMessage(response.data.error))
   }
 }
 
