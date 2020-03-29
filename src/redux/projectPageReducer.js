@@ -36,4 +36,9 @@ export const getProjects = () => async (dispatch) => {
   dispatch(setProjects(projects.data))
 }
 
+export const searchProjects = (inputValue) => async (dispatch) => {
+  const projects = await projectsAPI.searchProjects(inputValue)
+  dispatch(setProjects(projects.data))
+}
+
 export default projectPageReducer

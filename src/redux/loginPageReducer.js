@@ -23,12 +23,12 @@ const loginPageReducer = (state = initialState, action) => {
 }
 
 export const signIn = (login, password) => async dispatch => {
-  const response = await authAPI.login(login, password)
-  if (response.data.resultCode === 0) {
+  try {
+    await authAPI.login(login, password)
     dispatch(setUserData(login, password, true))
     dispatch(setErrorMessage(''))
-  } else {
-    dispatch(setErrorMessage(response.data.error))
+  } catch (error) {
+    dispatch(setErrorMessage(error.response.data.error))
   }
 }
 

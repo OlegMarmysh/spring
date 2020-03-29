@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import style from './Projects.module.scss'
 import SpringProject from './springProject/SpringProjects'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProjects } from '../../redux/projectPageReducer'
+import { getProjects, searchProjects } from '../../redux/projectPageReducer'
 
 const Projects = () => {
   const [inputValue, setInputValue] = useState('')
@@ -12,11 +12,8 @@ const Projects = () => {
   }, [])
   const springProjects = useSelector(state => state.projectPage.springProjects)
   const springAtticProjects = useSelector(state => state.projectPage.springAtticProjects)
-  const search = new RegExp(inputValue, 'i')
-  const filteredSpringProject = springProjects.filter((el) => search.test(el.title))
-  const filteredSpringAtticProject = springAtticProjects.filter((el) => search.test(el.title))
-  const createSpringProject = filteredSpringProject.length
-    ? filteredSpringProject.map((el) => (
+  const createSpringProject = springProjects.length
+    ? springProjects.map((el) => (
       <SpringProject
         key={el.title}
         img={el.img}
@@ -25,8 +22,8 @@ const Projects = () => {
       />
     ))
     : 'No results'
-  const createSpringAtticProject = filteredSpringAtticProject.length
-    ? filteredSpringAtticProject.map((el) => (
+  const createSpringAtticProject = springAtticProjects.length
+    ? springAtticProjects.map((el) => (
       <SpringProject
         key={el.title}
         img={el.img}
@@ -38,6 +35,9 @@ const Projects = () => {
   const onInputChange = (e) => {
     setInputValue(e.currentTarget.value)
   }
+  const onSearchProjects = (e) => {
+    dispatch(searchProjects(inputValue))
+  }
   return (
     <section>
       <div className={style.wrapperBlock}>
@@ -46,10 +46,11 @@ const Projects = () => {
             className={style.placeForSearch}
             value={inputValue}
             onChange={onInputChange}
+            onKeyUp={onSearchProjects}
             type="text"
             placeholder="Search..."
           />
-          <button className={style.searchButton} />
+          <button className={style.searchButton} onClick={onSearchProjects}/>
         </div>
         <div className={style.springProjects}>
           {createSpringProject}
