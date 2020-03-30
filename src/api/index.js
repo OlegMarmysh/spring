@@ -16,5 +16,8 @@ export const projectsAPI = {
 export const authAPI = {
   login (login, password) {
     return instance.post('login', { login, password })
+  },
+  register (login, password) {
+    return instance.post('register', { login, password })
   }
 }

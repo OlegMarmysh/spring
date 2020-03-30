@@ -6,6 +6,7 @@ import Main from './components/main/Main'
 import Projects from './components/projects/Projects'
 import Footer from './components/footer/Footer'
 import Login from './components/login/Login'
+import Register from './components/register/Register'
 
 const App = () => {
   const isAuth = useSelector(state => state.loginPage.isAuth)
@@ -28,6 +29,7 @@ const SpringApp = () => {
       <Redirect exact from='/' to='/spring' />
       <Route path='/spring' component={App} />
       <Route path='/login' component={Login} />
+      <Route path='/register' component={Register} />
     </HashRouter>
   )
 }

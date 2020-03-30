@@ -1,5 +1,5 @@
 import { SET_SOME_STATUS, SET_USER_DATA, setErrorMessage, setUserData } from './loginAction'
-import { authAPI } from '../api/api'
+import { authAPI } from '../api'
 
 const initialState = {
   isAuth: false,
@@ -29,6 +29,7 @@ export const signIn = (login, password) => async dispatch => {
     dispatch(setErrorMessage(''))
   } catch (error) {
     dispatch(setErrorMessage(error.response.data.error))
+    console.log(error)
   }
 }
 

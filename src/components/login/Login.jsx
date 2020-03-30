@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import style from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import { signIn } from '../../redux/loginPageReducer'
+import { setIsRegistered } from '../../redux/registerAction'
+import { setErrorMessage } from '../../redux/loginAction'
 
 const Login = () => {
   const [login, setLogin] = useState('')
@@ -25,6 +27,10 @@ const Login = () => {
     e.preventDefault()
     dispatch(signIn(login, password))
   }
+  const onRegistration = () => {
+    dispatch(setIsRegistered(false))
+    dispatch(setErrorMessage(''))
+  }
   return (
     <div className={style.wrapper}>
       <form className={style.loginForm}>
@@ -36,6 +42,7 @@ const Login = () => {
         </div>
         <div>
           <button className={style.loginBtn} onClick={onSubmit}>Sign in</button>
+          <NavLink to="/register" className={style.registerLink} onClick={onRegistration}>Registration</NavLink>
         </div>
       </form>
     </div>

@@ -1,12 +1,5 @@
-import springBoot from '../image/spring-boot.svg'
-import springFramework from '../image/spring-framework.svg'
-import springData from '../image/spring-data.svg'
-import springCloud from '../image/spring-cloud.svg'
-import springPlatform from '../image/logo-io-platform.png'
-import springEd from '../image/spring-ed.svg'
-import { projectsAPI } from '../api/api'
-
-export const SET_PROJECTS = 'spring/projectsPage/SET_PROJECTS'
+import { projectsAPI } from '../api'
+import { SET_PROJECTS, setProjects } from './projectAction'
 
 const initialState = {
   springProjects: [],
@@ -26,19 +19,22 @@ const projectPageReducer = (state = initialState, action) => {
   }
 }
 
-export const setProjects = (projects) => ({
-  type: SET_PROJECTS,
-  payload: projects
-})
-
 export const getProjects = () => async (dispatch) => {
-  const projects = await projectsAPI.getProjects()
-  dispatch(setProjects(projects.data))
+  try {
+    const projects = await projectsAPI.getProjects()
+    dispatch(setProjects(projects.data))
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export const searchProjects = (inputValue) => async (dispatch) => {
-  const projects = await projectsAPI.searchProjects(inputValue)
-  dispatch(setProjects(projects.data))
+  try {
+    const projects = await projectsAPI.searchProjects(inputValue)
+    dispatch(setProjects(projects.data))
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export default projectPageReducer
