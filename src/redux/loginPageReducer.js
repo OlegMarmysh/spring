@@ -4,7 +4,6 @@ import { authAPI } from '../api'
 const initialState = {
   isAuth: false,
   login: null,
-  password: null,
   errorMessage: ''
 }
 
@@ -24,8 +23,9 @@ const loginPageReducer = (state = initialState, action) => {
 
 export const signIn = (login, password) => async dispatch => {
   try {
-    await authAPI.login(login, password)
-    dispatch(setUserData(login, password, true))
+    const response = await authAPI.login(login, password)
+    localStorage.setItem('token', response.data.token)
+    dispatch(setUserData(login, true))
     dispatch(setErrorMessage(''))
   } catch (error) {
     dispatch(setErrorMessage(error.response.data.error))

@@ -22,6 +22,7 @@ const Header = () => {
   }
   const onLogOut = () => {
     dispatch(logOut())
+    localStorage.clear()
   }
   return (
     <header>
