@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
 import style from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { signIn } from '../../redux/loginPageReducer'
 import { setIsRegistered } from '../../redux/registerAction'
 import { setErrorMessage } from '../../redux/loginAction'
 
-const Login = () => {
+const Login = (props) => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
-  const isAuth = useSelector(state => state.loginPage.isAuth)
   const errorMessage = useSelector(state => state.loginPage.errorMessage)
 
-  if (isAuth) {
-    return <Redirect to='/spring'/>
-  }
   const onLoginChange = (e) => {
     setLogin(e.currentTarget.value)
   }
@@ -25,7 +21,9 @@ const Login = () => {
   }
   const onSubmit = (e) => {
     e.preventDefault()
-    dispatch(signIn(login, password))
+    dispatch(signIn(login, password)).then(() => {
+      props.history.push('/spring')
+    })
   }
   const onRegistration = () => {
     dispatch(setIsRegistered(false))
@@ -42,11 +40,11 @@ const Login = () => {
         </div>
         <div>
           <button className={style.loginBtn} onClick={onSubmit}>Sign in</button>
-          <NavLink to="/register" className={style.registerLink} onClick={onRegistration}>Registration</NavLink>
+          <NavLink to='/register' className={style.registerLink} onClick={onRegistration}>Registration</NavLink>
         </div>
       </form>
     </div>
   )
 }
 
-export default Login
+export default withRouter(Login)

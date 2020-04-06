@@ -1,10 +1,15 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://banana-tart-40503.herokuapp.com//'
+  baseURL: 'https://banana-tart-40503.herokuapp.com/'
 })
 const getToken = () => {
-  return { Authorization: `Bearer ${localStorage.getItem('token')}` }
+  const token = localStorage.getItem('token')
+  if (token) {
+    return { Authorization: `Bearer ${token}` }
+  } else {
+    return {}
+  }
 }
 export const projectsAPI = {
   getProjects () {

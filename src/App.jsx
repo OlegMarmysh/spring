@@ -1,6 +1,5 @@
 import React from 'react'
 import { HashRouter, Redirect, Route } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import Header from './components/header/Header'
 import Main from './components/main/Main'
 import Projects from './components/projects/Projects'
@@ -9,8 +8,7 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 
 const App = () => {
-  const isAuth = useSelector(state => state.loginPage.isAuth)
-  if (!isAuth) {
+  if (!localStorage.getItem('token')) {
     return <Redirect to='/login'/>
   }
   return (
@@ -26,7 +24,7 @@ const App = () => {
 const SpringApp = () => {
   return (
     <HashRouter>
-      <Redirect exact from='/' to='/spring' />
+      <Redirect from='/' to='/spring' />
       <Route path='/spring' component={App} />
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />

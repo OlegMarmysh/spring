@@ -6,8 +6,9 @@ import logo from '../../image/logo.svg'
 import '../../index.scss'
 import { useDispatch } from 'react-redux'
 import { logOut } from '../../redux/loginPageReducer'
+import { withRouter } from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
   const [isHidden, setIsHidden] = useState(false)
   const dispatch = useDispatch()
   const menuBurgerClassActive = isHidden ? style.menuBurgerActive : style.menuBurger
@@ -23,6 +24,7 @@ const Header = () => {
   const onLogOut = () => {
     dispatch(logOut())
     localStorage.clear()
+    props.history.push('/spring')
   }
   return (
     <header>
@@ -46,4 +48,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default withRouter(Header)

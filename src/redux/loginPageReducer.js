@@ -2,7 +2,6 @@ import { SET_SOME_STATUS, SET_USER_DATA, setErrorMessage, setUserData } from './
 import { authAPI } from '../api'
 
 const initialState = {
-  isAuth: false,
   login: null,
   errorMessage: ''
 }
@@ -25,7 +24,7 @@ export const signIn = (login, password) => async dispatch => {
   try {
     const response = await authAPI.login(login, password)
     localStorage.setItem('token', response.data.token)
-    dispatch(setUserData(login, true))
+    dispatch(setUserData(login))
     dispatch(setErrorMessage(''))
   } catch (error) {
     dispatch(setErrorMessage(error.response.data.error))
@@ -34,7 +33,7 @@ export const signIn = (login, password) => async dispatch => {
 }
 
 export const logOut = () => dispatch => {
-  dispatch(setUserData(null, null, false))
+  dispatch(setUserData(null))
 }
 
 export default loginPageReducer
