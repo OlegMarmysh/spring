@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/spring/static/css/main.0b24447c.chunk.css",
-    "main.js": "/spring/static/js/main.a112a34b.chunk.js",
-    "main.js.map": "/spring/static/js/main.a112a34b.chunk.js.map",
+    "main.js": "/spring/static/js/main.50d881bd.chunk.js",
+    "main.js.map": "/spring/static/js/main.50d881bd.chunk.js.map",
     "runtime-main.js": "/spring/static/js/runtime-main.100be23e.js",
     "runtime-main.js.map": "/spring/static/js/runtime-main.100be23e.js.map",
-    "static/js/2.5a89977e.chunk.js": "/spring/static/js/2.5a89977e.chunk.js",
-    "static/js/2.5a89977e.chunk.js.map": "/spring/static/js/2.5a89977e.chunk.js.map",
+    "static/js/2.d9ede50e.chunk.js": "/spring/static/js/2.d9ede50e.chunk.js",
+    "static/js/2.d9ede50e.chunk.js.map": "/spring/static/js/2.d9ede50e.chunk.js.map",
     "index.html": "/spring/index.html",
-    "precache-manifest.ba39c6563e9121910cf7fec2851009b8.js": "/spring/precache-manifest.ba39c6563e9121910cf7fec2851009b8.js",
+    "precache-manifest.03bbbb57c6889426dfb7d673c09e6f93.js": "/spring/precache-manifest.03bbbb57c6889426dfb7d673c09e6f93.js",
     "service-worker.js": "/spring/service-worker.js",
     "static/css/main.0b24447c.chunk.css.map": "/spring/static/css/main.0b24447c.chunk.css.map",
-    "static/js/2.5a89977e.chunk.js.LICENSE.txt": "/spring/static/js/2.5a89977e.chunk.js.LICENSE.txt",
+    "static/js/2.d9ede50e.chunk.js.LICENSE.txt": "/spring/static/js/2.d9ede50e.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/spring/static/media/logo.fc4350c5.svg",
     "static/media/pacman.svg": "/spring/static/media/pacman.c8a21978.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.100be23e.js",
-    "static/js/2.5a89977e.chunk.js",
+    "static/js/2.d9ede50e.chunk.js",
     "static/css/main.0b24447c.chunk.css",
-    "static/js/main.a112a34b.chunk.js"
+    "static/js/main.50d881bd.chunk.js"
   ]
 }
