@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import style from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { signIn } from '../../redux/loginPageReducer'
 import { setIsRegistered } from '../../redux/registerAction'
 import { setErrorMessage } from '../../redux/loginAction'
 
-const Login = (props) => {
+const Login = () => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
   const errorMessage = useSelector(state => state.loginPage.errorMessage)
+  const history = useHistory()
 
   const onLoginChange = (e) => {
     setLogin(e.currentTarget.value)
@@ -22,7 +23,9 @@ const Login = (props) => {
   const onSubmit = (e) => {
     e.preventDefault()
     dispatch(signIn(login, password)).then(() => {
-      props.history.push('/spring')
+      if (localStorage.getItem('token')) {
+        history.push('/spring')
+      }
     })
   }
   const onRegistration = () => {
@@ -31,7 +34,7 @@ const Login = (props) => {
   }
   return (
     <div className={style.wrapper}>
-      <form className={style.loginForm}>
+      <form onSubmit={onSubmit} className={style.loginForm}>
         <h2>Sign in</h2>
         <input type="text" placeholder="login" value={login} onChange={onLoginChange}/>
         <input type="password" placeholder="password" value={password} onChange={onPasswordChange}/>
@@ -39,7 +42,7 @@ const Login = (props) => {
           <span>{errorMessage}</span>
         </div>
         <div>
-          <button className={style.loginBtn} onClick={onSubmit}>Sign in</button>
+          <button className={style.loginBtn}>Sign in</button>
           <NavLink to='/register' className={style.registerLink} onClick={onRegistration}>Registration</NavLink>
         </div>
       </form>
@@ -47,4 +50,4 @@ const Login = (props) => {
   )
 }
 
-export default withRouter(Login)
+export default Login
