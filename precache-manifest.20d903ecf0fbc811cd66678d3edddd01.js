@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2ff56076800523cf5ac0ac1ac806aef5",
+    "revision": "b511cd725f3178dc1e86df1212646b9a",
     "url": "/spring/index.html"
   },
   {
-    "revision": "49e3e0c6d6325b702bcc",
+    "revision": "96c5975662a20af57a1c",
     "url": "/spring/static/css/main.0b24447c.chunk.css"
   },
   {
-    "revision": "a2984725243fceb75e28",
-    "url": "/spring/static/js/2.d9ede50e.chunk.js"
+    "revision": "090e51a5e5d933c3336f",
+    "url": "/spring/static/js/2.189ecf1e.chunk.js"
   },
   {
     "revision": "115c29c453b61995b5be0af8c45bd83e",
-    "url": "/spring/static/js/2.d9ede50e.chunk.js.LICENSE.txt"
+    "url": "/spring/static/js/2.189ecf1e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "49e3e0c6d6325b702bcc",
-    "url": "/spring/static/js/main.50d881bd.chunk.js"
+    "revision": "96c5975662a20af57a1c",
+    "url": "/spring/static/js/main.06f7fe87.chunk.js"
   },
   {
     "revision": "f88d324f7f8af64d53f7",
