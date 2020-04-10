@@ -1,15 +1,9 @@
-export const SET_IS_REGISTERED = 'spring/registerPage/SET_IS_REGISTERED'
-export const SET_SOME_STATUS = 'spring/registerPage/SET_SOME_STATUS'
+export const SET_ERROR_MESSAGE = 'spring/registerPage/SET_ERROR_MESSAGE'
 export const SET_LOGIN_ERROR = 'spring/registerPage/SET_LOGIN_ERROR'
 export const SET_PASS_ERROR = 'spring/registerPage/SET_PASS_ERROR'
 
-export const setIsRegistered = (isRegistered) => ({
-  type: SET_IS_REGISTERED,
-  payload: { isRegistered }
-})
-
 export const setErrorMessage = (errorMessage) => ({
-  type: SET_SOME_STATUS,
+  type: SET_ERROR_MESSAGE,
   payload: { errorMessage }
 })
 

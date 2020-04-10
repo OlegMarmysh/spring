@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './Register.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { register } from '../../redux/registerPageReducer'
 import { setErrorMessage, setLoginError, setPassError } from '../../redux/registerAction'
 
@@ -9,14 +9,10 @@ const Register = () => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
-  const isRegistered = useSelector(state => state.registerPage.isRegistered)
+  const history = useHistory()
   const errorMessage = useSelector(state => state.registerPage.errorMessage)
   const loginError = useSelector(state => state.registerPage.loginError)
   const passError = useSelector(state => state.registerPage.passError)
-
-  if (isRegistered) {
-    return <Redirect to='/login'/>
-  }
 
   const onLoginChange = (e) => {
     setLogin(e.currentTarget.value)
@@ -25,9 +21,16 @@ const Register = () => {
   const onPasswordChange = (e) => {
     setPassword(e.currentTarget.value)
   }
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    dispatch(register(login, password))
+    try {
+      const res = await dispatch(register(login, password))
+      if (!res) {
+        history.push('/login')
+      }
+    } catch (e) {
+      console.log(e)
+    }
   }
   const onCancelRegistration = () => {
     dispatch(setErrorMessage(''))

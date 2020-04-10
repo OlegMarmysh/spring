@@ -3,7 +3,6 @@ import style from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
 import { signIn } from '../../redux/loginPageReducer'
-import { setIsRegistered } from '../../redux/registerAction'
 import { setErrorMessage } from '../../redux/loginAction'
 
 const Login = () => {
@@ -29,7 +28,6 @@ const Login = () => {
     })
   }
   const onRegistration = () => {
-    dispatch(setIsRegistered(false))
     dispatch(setErrorMessage(''))
   }
   return (

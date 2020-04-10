@@ -1,4 +1,4 @@
-import { SET_SOME_STATUS, SET_USER_DATA, setErrorMessage, setUserData } from './loginAction'
+import { SET_ERROR_MESSAGE, SET_USER_DATA, setErrorMessage, setUserData } from './loginAction'
 import { authAPI } from '../api'
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
 const loginPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_DATA:
-    case SET_SOME_STATUS: {
+    case SET_ERROR_MESSAGE: {
       return {
         ...state,
         ...action.payload
