@@ -29,7 +29,7 @@ export const authAPI = {
   login (login, password) {
     return instance.post('login', { login, password })
   },
-  register (login, password) {
-    return instance.post('register', { login, password })
+  register (login, password, firstName, lastName, age) {
+    return instance.post('register', { login, password, firstName, lastName, age })
   }
 }
