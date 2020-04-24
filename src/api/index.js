@@ -3,25 +3,21 @@ import axios from 'axios'
 const instance = axios.create({
   baseURL: 'https://banana-tart-40503.herokuapp.com/'
 })
-const getToken = () => {
-  const token = localStorage.getItem('token')
-  if (token) {
-    return { Authorization: `Bearer ${token}` }
+
+instance.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('token')
+    if (token) config.headers.Authorization = `Bearer ${token}`
+    return config
   }
-  return {}
-}
+)
+
 export const projectsAPI = {
   getProjects () {
-    return instance.get('projects', {
-      headers:
-          getToken()
-    })
+    return instance.get('projects')
   },
   searchProjects (inputValue) {
-    return instance.get(`projects?value=${inputValue}`, {
-      headers:
-          getToken()
-    })
+    return instance.get(`projects?value=${inputValue}`)
   }
 }
 
