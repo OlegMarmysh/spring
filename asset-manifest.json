@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/spring/static/css/main.0b24447c.chunk.css",
-    "main.js": "/spring/static/js/main.ea80778b.chunk.js",
-    "main.js.map": "/spring/static/js/main.ea80778b.chunk.js.map",
+    "main.css": "/spring/static/css/main.e2141dea.chunk.css",
+    "main.js": "/spring/static/js/main.ccaa6a28.chunk.js",
+    "main.js.map": "/spring/static/js/main.ccaa6a28.chunk.js.map",
     "runtime-main.js": "/spring/static/js/runtime-main.100be23e.js",
     "runtime-main.js.map": "/spring/static/js/runtime-main.100be23e.js.map",
     "static/js/2.c9d7d51f.chunk.js": "/spring/static/js/2.c9d7d51f.chunk.js",
     "static/js/2.c9d7d51f.chunk.js.map": "/spring/static/js/2.c9d7d51f.chunk.js.map",
     "index.html": "/spring/index.html",
-    "precache-manifest.26916b87bb514f6ac1aac3da6d626d8b.js": "/spring/precache-manifest.26916b87bb514f6ac1aac3da6d626d8b.js",
+    "precache-manifest.89521bcdd3c57e36f76e6cf3b16e672a.js": "/spring/precache-manifest.89521bcdd3c57e36f76e6cf3b16e672a.js",
     "service-worker.js": "/spring/service-worker.js",
-    "static/css/main.0b24447c.chunk.css.map": "/spring/static/css/main.0b24447c.chunk.css.map",
+    "static/css/main.e2141dea.chunk.css.map": "/spring/static/css/main.e2141dea.chunk.css.map",
     "static/js/2.c9d7d51f.chunk.js.LICENSE.txt": "/spring/static/js/2.c9d7d51f.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/spring/static/media/logo.fc4350c5.svg",
+    "static/media/logo.svg": "/spring/static/media/logo.44edb84c.svg",
     "static/media/pacman.svg": "/spring/static/media/pacman.c8a21978.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.100be23e.js",
     "static/js/2.c9d7d51f.chunk.js",
-    "static/css/main.0b24447c.chunk.css",
-    "static/js/main.ea80778b.chunk.js"
+    "static/css/main.e2141dea.chunk.css",
+    "static/js/main.ccaa6a28.chunk.js"
   ]
 }
